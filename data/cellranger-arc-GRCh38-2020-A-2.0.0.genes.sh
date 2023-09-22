@@ -1,0 +1,1 @@
+zcat seurat_workflow/data/cellranger-arc-GRCh38-2020-A-2.0.0.genes.gtf.gz | awk '$3=="gene"' | cut -f 1,4,5,9 | sed 's/gene_id.*gene_name "//' | sed 's/".*//' | awk '{print $4"\t"$1"\t"$2"\t"$3}' > seurat_workflow/data/cellranger-arc-GRCh38-2020-A-2.0.0.genes.txt
